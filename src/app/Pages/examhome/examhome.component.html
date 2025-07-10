@@ -1,0 +1,20 @@
+<div class="exam-container">
+  <button class="add-btn" (click)="addExam()">➕ Add Exam</button>
+
+  <div class="grid">
+    <div class="card" *ngFor="let exam of exams">
+      <div class="card-header">
+        <h2>{{ exam.name }}</h2>
+        <span class="exam-number">#{{ exam.number }}</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Time:</strong> {{ exam.time }}</p>
+        <p><strong>Description:</strong> {{ exam.description }}</p>
+      </div>
+      <div class="card-footer">
+        <button (click)="editExam(exam)" class="edit-btn">✏️ Edit</button>
+        <button (click)="deleteExam(exam.id)" class="delete-btn">🗑️ Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
